@@ -7,11 +7,12 @@ private const val FEATURE_PREFIX = ":feature_"
 object ModuleDependency {
     // All consts are accessed via reflection
     const val APP = ":app"
-    const val FEATURE_ALBUM = ":feature_album"
-    const val FEATURE_PROFILE = ":feature_profile"
-    const val FEATURE_FAVOURITE = ":feature_favourite"
-    const val LIBRARY_BASE = ":library_base"
-    const val LIBRARY_TEST_UTILS = ":library_test_utils"
+    const val DOMAIN = ":domain"
+    const val DATA = ":data"
+    const val PRESENTATION = ":presentation"
+    const val REMOTE = ":remote"
+    const val CACHE = ":cache"
+
 
     // False positive" function can be private"
     // See: https://youtrack.jetbrains.com/issue/KT-33610

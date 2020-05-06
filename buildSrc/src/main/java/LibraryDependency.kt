@@ -22,6 +22,13 @@ private object LibraryVersion {
     const val COIL = "0.9.1"
     const val K_ANDROID = "0.8.8@aar"
     const val LOTTIE = "3.3.1"
+
+    const val COROUTINES = "1.3.3"
+    const val JAVAX_INJECT = "1"
+    const val JAVAX_ANNOTATION = "1.0"
+
+    const val RX_JAVA2 = "2.2.19"
+    const val RX_ANDROID = "2.1.1"
 }
 
 object LibraryDependency {
@@ -44,14 +51,17 @@ object LibraryDependency {
     const val MATERIAL = "com.google.android.material:material:${LibraryVersion.MATERIAL}"
     const val COROUTINES_ANDROID = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${CoreVersion.COROUTINES_ANDROID}"
     const val FRAGMENT_KTX = "androidx.fragment:fragment-ktx:${LibraryVersion.FRAGMENT_KTX}"
-    const val LIFECYCLE_EXTENSIONS = "android.arch.lifecycle:extensions:${LibraryVersion.LIFECYCLE}"
-    const val LIFECYCLE_VIEW_MODEL_KTX =
-        "androidx.lifecycle:lifecycle-viewmodel-ktx:${LibraryVersion.LIFECYCLE_VIEW_MODEL_KTX}"
+
     const val NAVIGATION_FRAGMENT_KTX = "androidx.navigation:navigation-fragment-ktx:${CoreVersion.NAVIGATION}"
     const val NAVIGATION_UI_KTX = "androidx.navigation:navigation-ui-ktx:${CoreVersion.NAVIGATION}"
     const val COIL = "io.coil-kt:coil:${LibraryVersion.COIL}"
     const val K_ANDROID = "com.pawegio.kandroid:kandroid:${LibraryVersion.K_ANDROID}"
     const val LOTTIE = "com.airbnb.android:lottie:${LibraryVersion.LOTTIE}"
+
+    const val JAVAX_INJECT = "javax.inject:javax.inject:${LibraryVersion.JAVAX_INJECT}"
+    const val JAVAX_ANNOTATION = "javax.annotation:jsr250-api:${LibraryVersion.JAVAX_ANNOTATION}"
+
+
 
     object Ui {
         const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:${LibraryVersion.CONSTRAINT_LAYOUT}"
@@ -81,6 +91,30 @@ object LibraryDependency {
         const val APP_COMPAT = "androidx.appcompat:appcompat:${LibraryVersion.APP_COMPAT}"
         const val CORE_KTX = "androidx.core:core-ktx:${LibraryVersion.CORE_KTX}"
 
+    }
+
+    object Retrofit {
+
+    }
+
+    object Dagger {
+
+    }
+
+    object Rx {
+        const val RX_JAVA2 = "io.reactivex.rxjava2:rxjava:${LibraryVersion.RX_JAVA2}"
+        const val RX_ANDROID = "io.reactivex.rxjava2:rxandroid:${LibraryVersion.RX_ANDROID}"
+    }
+
+    object Lifecycle {
+        const val EXTENSIONS = "android.arch.lifecycle:extensions:${LibraryVersion.LIFECYCLE}"
+        const val VIEW_MODEL_KTX =
+            "androidx.lifecycle:lifecycle-viewmodel-ktx:${LibraryVersion.LIFECYCLE_VIEW_MODEL_KTX}"
+    }
+
+    object Coroutines {
+        const val ANDROID = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${LibraryVersion.COROUTINES}"
+        const val TEST = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${LibraryVersion.COROUTINES}"
     }
 
 

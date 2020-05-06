@@ -1,5 +1,5 @@
 plugins {
-    id(GradlePluginId.ANDROID_APPLICATION)
+    id(GradlePluginId.ANDROID_LIBRARY)
     id(GradlePluginId.KOTLIN_ANDROID)
     id(GradlePluginId.KOTLIN_ANDROID_EXTENSIONS)
     id(GradlePluginId.KTLINT_GRADLE)
@@ -9,7 +9,6 @@ android {
     compileSdkVersion(AndroidConfig.COMPILE_SDK_VERSION)
 
     defaultConfig {
-        applicationId = AndroidConfig.ID
         minSdkVersion(AndroidConfig.MIN_SDK_VERSION)
         targetSdkVersion(AndroidConfig.TARGET_SDK_VERSION)
         buildToolsVersion(AndroidConfig.BUILD_TOOLS_VERSION)
@@ -48,23 +47,15 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
-
-
 }
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(LibraryDependency.Kotlin.KOTLIN)
-    implementation(LibraryDependency.Core.APP_COMPAT)
+    implementation(LibraryDependency.Coroutines.ANDROID)
+    implementation(LibraryDependency.JAVAX_INJECT)
+    implementation(LibraryDependency.JAVAX_ANNOTATION)
     implementation(LibraryDependency.Core.CORE_KTX)
-    implementation(LibraryDependency.Ui.CONSTRAINT_LAYOUT)
-    implementation(LibraryDependency.Lifecycle.EXTENSIONS)
-    implementation(LibraryDependency.Lifecycle.VIEW_MODEL_KTX)
 
     addTestDependencies()
-}
-
-ktlint {
-    android.set(true)
-    outputColorName.set("RED")
 }
