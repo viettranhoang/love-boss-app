@@ -1,7 +1,6 @@
 plugins {
     id(GradlePluginId.KOTLIN_LIBRARY)
     id(GradlePluginId.JAVA_LIBRARY)
-    id(GradlePluginId.KTLINT_GRADLE)
 }
 
 dependencies {

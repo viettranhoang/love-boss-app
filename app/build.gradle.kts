@@ -2,7 +2,6 @@ plugins {
     id(GradlePluginId.ANDROID_APPLICATION)
     id(GradlePluginId.KOTLIN_ANDROID)
     id(GradlePluginId.KOTLIN_ANDROID_EXTENSIONS)
-    id(GradlePluginId.KTLINT_GRADLE)
 }
 
 android {
@@ -47,9 +46,6 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
-
-
-
 }
 
 dependencies {
@@ -62,9 +58,4 @@ dependencies {
     implementation(LibraryDependency.Lifecycle.VIEW_MODEL_KTX)
 
     addTestDependencies()
-}
-
-ktlint {
-    android.set(true)
-    outputColorName.set("RED")
 }

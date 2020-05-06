@@ -5,7 +5,6 @@ pluginManagement {
     }
 
     plugins {
-        id(GradlePluginId.KTLINT_GRADLE) version GradlePluginVersion.KTLINT_GRADLE
         id(GradlePluginId.GRADLE_VERSION_PLUGIN) version GradlePluginVersion.GRADLE_VERSION_PLUGIN
         id(GradlePluginId.KOTLIN_JVM) version GradlePluginVersion.KOTLIN
         id(GradlePluginId.KOTLIN_ANDROID) version GradlePluginVersion.KOTLIN
