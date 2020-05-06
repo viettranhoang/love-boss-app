@@ -1,42 +1,60 @@
-
-
 plugins {
-    id("com.android.application")
-    id("kotlin-android")
-    id("kotlin-android-extensions")
-    id("kotlin-kapt")
+    id(GradlePluginId.ANDROID_APPLICATION)
+    id(GradlePluginId.KOTLIN_ANDROID)
+    id(GradlePluginId.KOTLIN_ANDROID_EXTENSIONS)
 }
 
 android {
-    compileSdkVersion(29)
-    buildToolsVersion = "29.0.2"
+    compileSdkVersion(AndroidConfig.COMPILE_SDK_VERSION)
 
     defaultConfig {
-        applicationId = "com.vit.boss"
-        minSdkVersion(21)
-        targetSdkVersion(29)
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = AndroidConfig.ID
+        minSdkVersion(AndroidConfig.MIN_SDK_VERSION)
+        targetSdkVersion(AndroidConfig.TARGET_SDK_VERSION)
+        buildToolsVersion(AndroidConfig.BUILD_TOOLS_VERSION)
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        versionCode = AndroidConfig.VERSION_CODE
+        versionName = AndroidConfig.VERSION_NAME
+        testInstrumentationRunner = AndroidConfig.TEST_INSTRUMENTATION_RUNNER
     }
 
     buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        getByName(BuildType.RELEASE) {
+            isMinifyEnabled = BuildTypeRelease.isMinifyEnabled
+            proguardFiles("proguard-android.txt", "proguard-rules.pro")
         }
+
+        getByName(BuildType.DEBUG) {
+            isMinifyEnabled = BuildTypeDebug.isMinifyEnabled
+        }
+
+        testOptions {
+            unitTests.isReturnDefaultValues = TestOptions.IS_RETURN_DEFAULT_VALUES
+        }
+
+        compileOptions {
+            sourceCompatibility = JavaVersion.VERSION_1_8
+            targetCompatibility = JavaVersion.VERSION_1_8
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
 }
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.71")
-    implementation("androidx.appcompat:appcompat:1.0.2")
-    implementation("androidx.core:core-ktx:1.0.2")
-    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
-    testImplementation("junit:junit:4.12")
-    androidTestImplementation("androidx.test.ext:junit:1.1.1")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")
+    implementation(LibraryDependency.Kotlin.KOTLIN)
+    implementation(LibraryDependency.Core.APP_COMPAT)
+    implementation(LibraryDependency.Core.CORE_KTX)
+    implementation(LibraryDependency.Ui.CONSTRAINT_LAYOUT)
+
+    addTestDependencies()
 }
