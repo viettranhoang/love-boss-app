@@ -4,6 +4,8 @@ plugins {
 }
 
 dependencies {
+    implementation(project(ModuleDependency.DOMAIN))
+
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(LibraryDependency.Kotlin.KOTLIN)
     implementation(LibraryDependency.Coroutines.ANDROID)

@@ -37,7 +37,6 @@ object LibraryDependency {
     const val KOTLIN_REFLECT = "org.jetbrains.kotlin:kotlin-reflect:${CoreVersion.KOTLIN}"
     const val KODEIN = "org.kodein.di:kodein-di-generic-jvm:${LibraryVersion.KODEIN}"
     const val KODEIN_ANDROID_X = "org.kodein.di:kodein-di-framework-android-x:${LibraryVersion.KODEIN}"
-    const val RETROFIT = "com.squareup.retrofit2:retrofit:${LibraryVersion.RETROFIT}"
     const val RETROFIT_MOSHI_CONVERTER = "com.squareup.retrofit2:converter-moshi:${LibraryVersion.RETROFIT}"
 
     // Retrofit will use okhttp 4 (it tas binary capability with okhttp 3)
@@ -94,6 +93,9 @@ object LibraryDependency {
     }
 
     object Retrofit {
+        const val RETROFIT = "com.squareup.retrofit2:retrofit:${LibraryVersion.RETROFIT}"
+        const val GSON = "com.squareup.retrofit2:converter-gson:${LibraryVersion.RETROFIT}"
+        const val MOCK = "com.squareup.retrofit2:retrofit-mock:${LibraryVersion.RETROFIT}"
 
     }
 

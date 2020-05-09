@@ -1,6 +1,6 @@
-package com.vit.remote.common
+package com.vit.data
 
-internal interface Mapper<M, E> {
+internal interface Mapper<E, M> {
     fun mapToEntity(type: M): E
 
     fun mapFromEntity(type: E): M
